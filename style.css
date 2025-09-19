@@ -1,0 +1,60 @@
+:root{
+  --bg:#0b0c1e; --bg-2:#0a0b18;
+  --text:#e6e6f0; --muted:#a5adcb;
+  --rose:#ff5e99; --rose-2:#ffa3c7; --accent:#ffd166;
+  --card:#101528; --line:#1f2a44;
+}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;color:var(--text);font-family:Poppins,system-ui,Segoe UI,Roboto,Arial;background:radial-gradient(1000px 700px at 50% -10%, #121735 0%, var(--bg) 60%), var(--bg-2);transition:background .3s ease,color .3s ease}
+body.theme-light{--bg:#fff6fa;--bg-2:#fff;--text:#231f20;--card:#ffffff;--line:#f1d9e4;--muted:#6b7280}
+.hero{position:relative;min-height:92vh;display:grid;place-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(1200px 700px at 50% -10%, rgba(255,94,153,.25) 0%, transparent 60%)}
+.hero-content{position:relative;text-align:center;padding:2rem;z-index:1}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw + 1rem,4rem);margin:0 0 .5rem}
+.hero .typewriter{font-size:clamp(1rem,1.2vw + .6rem,1.25rem);color:var(--rose-2);opacity:.95}
+.btn{display:inline-block;margin:.6rem .3rem;padding:.8rem 1.1rem;background:linear-gradient(90deg,var(--rose),var(--accent));border:none;border-radius:999px;color:#111;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 10px 30px rgba(255,94,153,.25);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)} .btn.small{padding:.5rem .8rem;font-size:.9rem}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.scroll{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);color:var(--muted);text-decoration:none;font-size:1.6rem;opacity:.7}
+.section{padding:4rem 1.25rem;max-width:1100px;margin:0 auto}
+.section h2{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,1.6vw + 1rem,2.2rem);margin:0 0 1rem}
+.legend{color:var(--muted)}
+.timer{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:1rem;margin:1.5rem 0}
+.timer div{background:linear-gradient(180deg,#121a36,#0d1326);border:1px solid var(--line);border-radius:1rem;padding:1.2rem;text-align:center}
+body.theme-light .timer div{background:#fff}
+.timer span{display:block;font-size:clamp(1.8rem,2.8vw + .8rem,3rem);font-weight:800;letter-spacing:.5px}
+.timer small{color:var(--muted)}
+.player{display:grid;grid-template-columns:auto auto auto 1fr;gap:.8rem;align-items:center;background:linear-gradient(180deg,#101731,#0c1228);border:1px solid var(--line);border-radius:1rem;padding:1rem}
+body.theme-light .player{background:#fff}
+.track-info{min-width:220px}
+.progress{height:6px;background:#263057;border-radius:6px;overflow:hidden;margin-top:.4rem}
+#barra{height:100%;width:0%;background:linear-gradient(90deg,var(--rose),var(--accent))}
+.carousel{position:relative;overflow:hidden;border-radius:1.25rem;border:1px solid var(--line);background:linear-gradient(180deg,#0c1329,#0b1022)}
+.track{display:flex;transition:transform .5s ease;will-change:transform}
+.track img{width:100%;max-height:58vh;object-fit:cover;flex:0 0 100%;cursor:pointer;animation:kenburns 12s ease infinite}
+@keyframes kenburns{0%{transform:scale(1) translate(0,0)}50%{transform:scale(1.06) translate(2%,-2%)}100%{transform:scale(1) translate(0,0)}}
+.nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);border:1px solid var(--line);color:#fff;width:44px;height:44px;border-radius:999px;display:grid;place-items:center;cursor:pointer;z-index:2}
+.prev{left:10px}.next{right:10px}
+.dots{display:flex;justify-content:center;gap:.5rem;padding:1rem}
+.dots button{width:10px;height:10px;border-radius:999px;border:1px solid var(--rose-2);background:transparent;cursor:pointer;opacity:.6}
+.dots button.active{background:var(--rose-2);opacity:1}
+.card{background:linear-gradient(180deg,#101731,#0c1228);border:1px solid var(--line);border-radius:1rem;padding:1.25rem;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+body.theme-light .card{background:#fff}
+.card p{line-height:1.9}.assinatura{margin-top:1rem;color:var(--rose-2);font-weight:600}
+.actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.share-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.footer{display:grid;place-items:center;padding:2rem;color:var(--muted)}
+.to-top{position:fixed;right:16px;bottom:16px;width:44px;height:44px;display:grid;place-items:center;text-decoration:none;background:linear-gradient(90deg,var(--rose),var(--accent));color:#111;border-radius:999px;font-weight:900;box-shadow:0 10px 30px rgba(255,94,153,.25)}
+.hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.heart{position:absolute;font-size:clamp(12px,1.5vw,22px);opacity:.7;animation:float 12s linear infinite}
+@keyframes float{0%{transform:translateY(100vh) scale(.8) rotate(0)}100%{transform:translateY(-10vh) scale(1.2) rotate(360deg)}}
+.sparkles{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.sparkle{position:absolute;width:3px;height:3px;border-radius:999px;background:radial-gradient(circle,#fff,transparent);animation:rise 6s linear infinite;opacity:.6}
+@keyframes rise{0%{transform:translateY(100vh)}100%{transform:translateY(-10vh)}}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:1rem}
+.lightbox.open{display:flex}
+.lightbox img{max-width:96vw;max-height:80vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox-close{position:absolute;top:12px;right:14px;width:42px;height:42px;display:grid;place-items:center;background:#000;color:#fff;border:1px solid #333;border-radius:999px;cursor:pointer;font-size:1.3rem}
+.lb-caption{color:#fff;margin-top:10px;text-align:center;max-width:90vw}
+.big-secret{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,8vw,6rem);line-height:1.05;text-align:center;margin:.5rem 0;background:linear-gradient(90deg,var(--rose),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 30px rgba(255,94,153,.25)}
+@media (max-width:720px){.timer{grid-template-columns:repeat(2,1fr)}.track img{max-height:46vh}}
